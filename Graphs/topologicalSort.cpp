@@ -12,14 +12,12 @@ int* topoSort(int V, vector<int> adj[]) {
             q.push(i);
         }
     }
-    //int ans[V]={0};
     static int ans[100];
     int c=0;
     while(!q.empty()){
         int f=q.front();
         q.pop();
         vis[f]=true;
-        //temp.push_back(f);
         ans[c]=f;
         for( auto i: adj[f]){
             id[i]--;

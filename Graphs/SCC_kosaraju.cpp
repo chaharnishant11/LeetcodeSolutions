@@ -1,9 +1,7 @@
 // { Driver Code Starts
 #include<bits/stdc++.h>
 using namespace std;
-
-
- // } Driver Code Ends
+// } Driver Code Ends
 
 /*  Function to find the number of strongly connected components
 *   using Kosaraju's algorithm
@@ -28,8 +26,7 @@ void dfs2(vector<int> adj[],int s,bool* vis){
     }
 }
 
-int kosaraju(int V, vector<int> adj[])
-{
+int kosaraju(int V, vector<int> adj[]){
     // Your code here
     bool vis[V];
     for(int i=0;i<V;i++) vis[i]=false;
