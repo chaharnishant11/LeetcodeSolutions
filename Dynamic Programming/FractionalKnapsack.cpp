@@ -30,7 +30,6 @@ int32_t main()
             vect[i]={x,y};
         }
         sort(vect.begin(),vect.end(),sortgrt);
-        //for(int i=0;i<n;i++) cout << vect[i].f <<" "<<vect[i].s << endl;
         for(int i=0;i<n&&w;i++)
         {
             if(w>=vect[i].s)
