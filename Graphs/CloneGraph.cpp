@@ -22,6 +22,8 @@ public:
 };
 */
 
+//DFS
+
 class Solution {
 public:
     Node* cloneGraph(Node* node) {
@@ -32,6 +34,36 @@ public:
             copies[node] = new Node(node -> val, {});
             for (Node* neighbor : node -> neighbors) {
                 copies[node] -> neighbors.push_back(cloneGraph(neighbor));
+            }
+        }
+        return copies[node];
+    }
+private:
+    unordered_map<Node*, Node*> copies;
+};
+
+
+// BFS
+
+class Solution {
+public:
+    Node* cloneGraph(Node* node) {
+        if (!node) {
+            return NULL;
+        }
+        queue<Node*> q;
+        Node* copy= new Node(node->val);
+        copies[node]=copy;
+        q.push(node);
+        while(!q.empty()){
+            Node* curr=q.front();
+            q.pop();
+            for(Node* neighbor : curr->neighbors){
+                if(copies.find(neighbor)==copies.end()){
+                    copies[neighbor] = new Node(neighbor -> val, {});
+                    q.push(neighbor);
+                }
+                copies[curr]->neighbors.push_back(copies[neighbor]);
             }
         }
         return copies[node];
