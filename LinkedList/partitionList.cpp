@@ -11,7 +11,7 @@
 class Solution {
 public:
     ListNode* partition(ListNode* head, int x) {
-         ListNode *head1 = new ListNode(0);
+        ListNode *head1 = new ListNode(0);
         ListNode *head2 = new ListNode(0);
         ListNode *h1 = head1;
         ListNode *h2 = head2;

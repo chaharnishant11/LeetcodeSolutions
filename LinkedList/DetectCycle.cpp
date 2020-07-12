@@ -1,35 +1,30 @@
-/*
-  Reverse a linked list
-  The input list will have at least one element  
-  Return the node which points to the head of the new LinkedList
-  Node is defined as 
-    struct node
-    {
-        int data;
-        struct node* next;
-    
-        node(int x){
-            data = x;
-            next = NULL;
-        }
-    
-    }*head;
-*/
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+ListNode* Solution::detectCycle(ListNode* A) {
+    // Do not write main() function.
+    // Do not read input, instead use the arguments to the function.
+    // Do not print the output, instead return values as specified
+    // Still have a doubt. Checkout www.interviewbit.com/pages/sample_codes/ for more details
 
-struct node *reverse (struct node *head, int k)
-{ 
-    // Complete this method
-    if(head==NULL or head->next==NULL) return head;
-    node* c=head;
-    node* p=NULL;
-    node* n;
-    int i=k;
-    while(i-- && c!=NULL){
-        n=c->next;
-        c->next=p;
-        p=c;
-        c=n;
+    ListNode* fast=A;
+    ListNode* slow=A;
+    while(fast && fast->next && slow){
+        fast=fast->next->next;
+        slow=slow->next;
+        if(slow==fast){
+            ListNode* temp=A;
+            while(temp!=slow){
+                slow=slow->next;
+                temp=temp->next;
+            }
+            return slow;
+        }
     }
-    head->next=reverse(n,k);
-    return p;
+    return NULL;
 }
