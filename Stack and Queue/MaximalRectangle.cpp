@@ -1,6 +1,5 @@
 class Solution {
 public:
-    
     int helper(vector<int>& h){
         int n=h.size();
         int ans=0,i=0;
@@ -16,8 +15,7 @@ public:
             }
         }
         return ans;
-    }
-    
+    }    
     int maximalRectangle(vector<vector<char>>& matrix) {
         int n=matrix.size();
         if(n==0) return 0;
