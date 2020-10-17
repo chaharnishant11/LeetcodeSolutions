@@ -7,17 +7,6 @@ using namespace std;
 string ltrim(const string &);
 string rtrim(const string &);
 
-
-/*
- * Complete the 'paperCuttings' function below.
- *
- * The function is expected to return a LONG_INTEGER.
- * The function accepts following parameters:
- *  1. INTEGER textLength
- *  2. INTEGER_ARRAY starting
- *  3. INTEGER_ARRAY ending
- */
-
 long paperCuttings(int textLength, vector<int> starting, vector<int> ending) {
     int n = starting.size();
 
